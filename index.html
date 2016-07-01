@@ -208,9 +208,16 @@ function draw() {
     para_squirrels[i].display();
 
     if(para_squirrels[i].y >= app.canvas.h-60){
+
+      // if not hit and passed player, then add to passed_fighters count...
+      if(!para_squirrels[i].hasBeenHit){
+        game.passed_fighters += 1;
+        document.getElementById('passed_fighters').innerHTML = game.passed_fighters;
+      }
+
+      // remove from array
       para_squirrels.splice(i,1);
-      game.passed_fighters += 1;
-      document.getElementById('passed_fighters').innerHTML = game.passed_fighters;
+
       //document.getElementById('score').innerHTML = para_squirrels[i].x;
     } else {
       //document.getElementById('passed_fighters').innerHTML = para_squirrels[i].x;
