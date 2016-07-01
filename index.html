@@ -209,7 +209,8 @@ function draw() {
 
     if(para_squirrels[i].y >= app.canvas.h-60){
       para_squirrels.splice(i,1);
-      //game.add_points(1);
+      game.passed_fighters += 1;
+      document.getElementById('passed_fighters').innerHTML = game.passed_fighters;
       //document.getElementById('score').innerHTML = para_squirrels[i].x;
     } else {
       //document.getElementById('passed_fighters').innerHTML = para_squirrels[i].x;
@@ -277,6 +278,7 @@ function addBullet(inX){
           } else{
 
           }
+
         }
 
       }
